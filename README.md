@@ -1,16 +1,42 @@
+# Refactoring Views With Helpers Lab
+
 ## Objectives
 
-1. Write Helpers
-2. Use helpers in their views
+1. Review creating associated objects
+2. Write a helper to conditionally display different links
+3. Use the helper in multiple views
 
-## Outline
+## Song Library
 
-Use the [solution from this previous lab as the "starter code"](https://github.com/learn-co-curriculum/displaying-associations-rails-lab/tree/solution).
+In this lab, we're going to augment our song library to show the artists
+associated with songs, and use helpers to display different links based
+on whether or not a song is associated with an artist.
 
-  * Pretty much it's a playlist app. Artists have many Songs. 
-  * To make the starter code work, can you add in the ability to write in the artist name in the Song form. Then `find_or_create_by`. If it's empty put it under a Artist called "Unknown". Also ad din the artist name to the `show` 
-  * Sometimes when you create Songs you don't know the Artist name. So you leave it blank
-  * We want to display something better then just Unknown. Want to encourage better artist names
-  * So we will display artist name if it's there, if not (it's unknwon) then we display a link to the edit page for that artist. If the artist is blank (returns `nil`) then we return a link to edit the song
-  * Have them write that as a partial
-  * Use it in the show and the index of Song
+When we add songs to our library, we want to be sure to include the
+artist so that we can keep things organized. Sometimes, however, we
+might be in a hurry and don't know the artist off the top of our heads,
+so we leave it blank.
+
+When we display the song library, we want to include the artist, but if there's no artist associated, we want to prompt the user to add one, because we don't want to contribute to the global iTunes library "Unknown Artist" epidemic.
+
+## Instructions
+
+The base models, controllers, views and other files have been provided. There are
+tests for the lab in the `spec` directory. You can run tests with the
+`rspec` command.
+
+1. Write the code to get (`artist_name`) and set (`artist_name=`) the
+   `Artist` associated with a `Song` model.
+2. Write a helper method to display the artist for a song, with the
+   following considerations:
+  * Put the method in the appropriate helper file following the
+    principle of Separation of Concerns
+  * Name the method `display_artist`
+  * If the artist name is not `nil`, return a link to the artist's
+    `show` page.
+  * If the artist name is `nil`, return a link to the song's `edit`
+    page, with a link text of "Add Artist"
+3. Use the helper to display the artist on the song `show` and `index`
+   pages.
+4. Make sure all tests pass then do this:
+![Dancing Daft Punk](http://i.giphy.com/ZCKh7knqLpc4M.gif)
