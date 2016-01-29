@@ -40,3 +40,5 @@ tests for the lab in the `spec` directory. You can run tests with the
    pages.
 4. Make sure all tests pass then do this:
 ![Dancing Daft Punk](http://i.giphy.com/ZCKh7knqLpc4M.gif)
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/refactoring-views-with-helpers-lab' title='Refactoring Views With Helpers Lab'>Refactoring Views With Helpers Lab</a> on Learn.co and start learning to code for free.</p>
