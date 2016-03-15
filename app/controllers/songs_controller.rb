@@ -5,6 +5,7 @@ class SongsController < ApplicationController
 
   def show
     @song = Song.find(params[:id])
+    #raise @song.artist.inspect
   end
 
   def new
