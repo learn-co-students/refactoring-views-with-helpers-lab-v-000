@@ -8,4 +8,5 @@ class Song < ActiveRecord::Base
   def artist_name=(name)
     self.artist = Artist.find_or_create_by(name: name)
   end
+  validates :title, presence: true
 end
