@@ -20,10 +20,10 @@ The base models, controllers, views and other files have been provided. There ar
 
 1. Write the code to get (`artist_name`) and set (`artist_name=`) the `Artist` associated with a `Song` model.
 2. Write a helper method to display the artist for a song, with the following considerations:
-  * Put the method in the appropriate helper file following the principle of Separation of Concerns
-  * Name the method `display_artist`
-  * If the artist name is not `nil`, return a link to the artist's `show` page.
-  * If the artist name is `nil`, return a link to the song's `edit` page, with a link text of "Add Artist"
+  - Put the method in the appropriate helper file following the principle of Separation of Concerns
+  - Name the method `display_artist`
+  - If the artist name is not `nil`, return a link to the artist's `show` page.
+  - If the artist name is `nil`, return a link to the song's `edit` page, with a link text of "Add Artist"
 3. Use the helper to display the artist on the song `show` and `index` pages.
 4. Make sure all tests pass then do this:
 ![Dancing Daft Punk](http://i.giphy.com/ZCKh7knqLpc4M.gif)
