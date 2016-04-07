@@ -8,36 +8,23 @@
 
 ## Song Library
 
-In this lab, we're going to augment our song library to show the artists
-associated with songs, and use helpers to display different links based
-on whether or not a song is associated with an artist.
+In this lab, we're going to augment our song library to show the artists associated with songs, and use helpers to display different links based on whether or not a song is associated with an artist.
 
-When we add songs to our library, we want to be sure to include the
-artist so that we can keep things organized. Sometimes, however, we
-might be in a hurry and don't know the artist off the top of our heads,
-so we leave it blank.
+When we add songs to or library, we want to be sure to include the artist so that we can keep things organized. Sometimes, however, we might be in a hurry and don't know the artist off the top of our heads, so we leave it blank.
 
 When we display the song library, we want to include the artist, but if there's no artist associated, we want to prompt the user to add one, because we don't want to contribute to the global iTunes library "Unknown Artist" epidemic.
 
 ## Instructions
 
-The base models, controllers, views and other files have been provided. There are
-tests for the lab in the `spec` directory. You can run tests with the
-`rspec` command.
+The base models, controllers, views and other files have been provided. There are tests for the lab in the `spec` directory. You can run tests with the `rspec` command.
 
-1. Write the code to get (`artist_name`) and set (`artist_name=`) the
-   `Artist` associated with a `Song` model.
-2. Write a helper method to display the artist for a song, with the
-   following considerations:
-  * Put the method in the appropriate helper file following the
-    principle of Separation of Concerns
+1. Write the code to get (`artist_name`) and set (`artist_name=`) the `Artist` associated with a `Song` model.
+2. Write a helper method to display the artist for a song, with the following considerations:
+  * Put the method in the appropriate helper file following the principle of Separation of Concerns
   * Name the method `display_artist`
-  * If the artist name is not `nil`, return a link to the artist's
-    `show` page.
-  * If the artist name is `nil`, return a link to the song's `edit`
-    page, with a link text of "Add Artist"
-3. Use the helper to display the artist on the song `show` and `index`
-   pages.
+  * If the artist name is not `nil`, return a link to the artist's `show` page.
+  * If the artist name is `nil`, return a link to the song's `edit` page, with a link text of "Add Artist"
+3. Use the helper to display the artist on the song `show` and `index` pages.
 4. Make sure all tests pass then do this:
 ![Dancing Daft Punk](http://i.giphy.com/ZCKh7knqLpc4M.gif)
 
