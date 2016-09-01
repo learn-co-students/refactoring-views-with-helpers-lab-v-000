@@ -12,7 +12,7 @@ RSpec.describe Song, type: :model do
     expect(@grid.artist_name).to eq("Daft Punk")
   end
 
-  it "can set the artist via name" do
+  it "can set the artist via artist_name" do
     song = Song.new(title: "Mad World")
     song.artist_name = "Tears for Fears"
     song.save
