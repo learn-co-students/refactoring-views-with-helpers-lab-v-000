@@ -1,8 +1,10 @@
 class ArtistsController < ApplicationController
   def index
+    @artist = Artist.all
   end
 
   def show
+      @artist = Artist.find(params[:id])
   end
 
   def new
@@ -10,7 +12,7 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    @artist = Artist.new(artist_params)
+    @artist = Artist.songs.new(artist_params)
 
     if @artist.save
       redirect_to @artist
