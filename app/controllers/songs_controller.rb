@@ -1,4 +1,5 @@
 class SongsController < ApplicationController
+  
   def index
     @songs = Song.all
   end
@@ -13,6 +14,7 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.new(song_params)
+    @song = Song.find_or_create_by(title: params[:song][:title])
 
     if @song.save
       redirect_to @song
