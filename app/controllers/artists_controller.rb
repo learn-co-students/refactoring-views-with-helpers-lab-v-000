@@ -1,8 +1,12 @@
 class ArtistsController < ApplicationController
+
   def index
+    @artists = Artist.all
   end
 
   def show
+    @artist = Artist.find(params[:id])
+    @songs = @artist.songs
   end
 
   def new
@@ -25,7 +29,6 @@ class ArtistsController < ApplicationController
 
   def update
     @artist = Artist.find(params[:id])
-
     @artist.update(artist_params)
 
     if @artist.save
