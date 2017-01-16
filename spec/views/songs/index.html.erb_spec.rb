@@ -10,6 +10,7 @@ RSpec.describe 'songs/index' do
   end
 
   it 'calls the helper to display the artist' do
+    #binding.pry
     render
     expect(rendered).to match /They Might Be Giants/
   end
