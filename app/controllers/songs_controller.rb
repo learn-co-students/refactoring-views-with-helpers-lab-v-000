@@ -27,7 +27,7 @@ class SongsController < ApplicationController
 
   def update
     @song = Song.find(params[:id])
-
+    binding.pry
     @song.update(song_params)
 
     if @song.save
