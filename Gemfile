@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'learn-co', '~> 1.0', '>= 1.0.4'
 gem 'rails', '4.2.5'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
