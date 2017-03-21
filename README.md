@@ -1,6 +1,6 @@
 # Refactoring Views With Helpers Lab
 
-## Objectives
+## Objectives 
 
 1. Review creating associated objects
 2. Write a helper to conditionally display different links
