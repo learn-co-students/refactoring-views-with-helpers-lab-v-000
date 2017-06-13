@@ -375,3 +375,1194 @@ Processing by ArtistsController#show as HTML
   Parameters: {"id"=>"2"}
   Rendered artists/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-06-12 21:46:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs"
+  Rendered songs/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 217ms (Views: 211.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-06-12 21:46:42 -0700
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-06-12 21:48:49 -0700
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.3ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-06-12 21:49:13 -0700
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.6ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 28ms (Views: 23.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-06-12 21:49:32 -0700
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artists/2" for 127.0.0.1 at 2017-06-12 21:49:36 -0700
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendered artists/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/songs/2" for 127.0.0.1 at 2017-06-12 21:49:38 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-06-12 21:50:05 -0700
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.3ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 21:50:07 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (36.6ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    4:   <%= f.label :title %>
+    5:   <%= f.text_field :title %><br>
+    6:   <%= f.label :artist_name %>
+    7:   <%= f.text_field :artist_name %>
+    8:   <br />
+    9: 
+   10:   <%= f.submit %>
+  app/models/song.rb:11:in `artist_name'
+  app/views/songs/new.html.erb:7:in `block in _app_views_songs_new_html_erb__2477228642739521575_69939923876560'
+  app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb__2477228642739521575_69939923876560'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.2ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (42.2ms)
+
+
+Started GET "/songs/3" for 127.0.0.1 at 2017-06-12 21:51:09 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=3):
+  app/controllers/songs_controller.rb:7:in `show'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.1ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.6ms)
+
+
+Started GET "/songs/2" for 127.0.0.1 at 2017-06-12 21:51:13 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-06-12 21:51:36 -0700
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 21:51:39 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    4:   <%= f.label :title %>
+    5:   <%= f.text_field :title %><br>
+    6:   <%= f.label :artist_name %>
+    7:   <%= f.text_field :artist_name %>
+    8:   <br />
+    9: 
+   10:   <%= f.submit %>
+  app/models/song.rb:11:in `artist_name'
+  app/views/songs/new.html.erb:7:in `block in _app_views_songs_new_html_erb__2477228642739521575_69939923876560'
+  app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb__2477228642739521575_69939923876560'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.2ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.2ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.0ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 21:52:13 -0700
+Processing by SongsController#new as HTML
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `build' for nil:NilClass):
+  app/controllers/songs_controller.rb:12:in `new'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.0ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.1ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.9ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 21:52:48 -0700
+Processing by SongsController#new as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `build' for nil:NilClass):
+  app/controllers/songs_controller.rb:12:in `new'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.2ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.6ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 21:52:58 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    4:   <%= f.label :title %>
+    5:   <%= f.text_field :title %><br>
+    6:   <%= f.label :artist_name %>
+    7:   <%= f.text_field :artist_name %>
+    8:   <br />
+    9: 
+   10:   <%= f.submit %>
+  app/models/song.rb:5:in `artist_name'
+  app/views/songs/new.html.erb:7:in `block in _app_views_songs_new_html_erb__2477228642739521575_69939923876560'
+  app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb__2477228642739521575_69939923876560'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.1ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.0ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.8ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 21:53:22 -0700
+Processing by SongsController#new as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.9ms)
+
+NoMethodError (undefined method `build' for nil:NilClass):
+  app/controllers/songs_controller.rb:12:in `new'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.2ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.0ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.9ms)
+
+
+Started PUT "/songs/console/repl_sessions/0b2f2fab56cef341ecd5483295821181" for 127.0.0.1 at 2017-06-12 21:53:40 -0700
+
+
+Started PUT "/songs/console/repl_sessions/0b2f2fab56cef341ecd5483295821181" for 127.0.0.1 at 2017-06-12 21:53:42 -0700
+
+
+Started PUT "/songs/console/repl_sessions/0b2f2fab56cef341ecd5483295821181" for 127.0.0.1 at 2017-06-12 21:53:46 -0700
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 21:53:57 -0700
+Processing by SongsController#new as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.2ms)
+
+NoMethodError (undefined method `build' for nil:NilClass):
+  app/controllers/songs_controller.rb:12:in `new'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.2ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.5ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 21:55:46 -0700
+Processing by SongsController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `build' for nil:NilClass):
+  app/controllers/songs_controller.rb:12:in `new'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.9ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.9ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 21:55:50 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.9ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    4:   <%= f.label :title %>
+    5:   <%= f.text_field :title %><br>
+    6:   <%= f.label :artist_name %>
+    7:   <%= f.text_field :artist_name %>
+    8:   <br />
+    9: 
+   10:   <%= f.submit %>
+  app/models/song.rb:5:in `artist_name'
+  app/views/songs/new.html.erb:7:in `block in _app_views_songs_new_html_erb__2477228642739521575_69939923876560'
+  app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb__2477228642739521575_69939923876560'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.0ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.9ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.1ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.0ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 21:56:52 -0700
+Processing by SongsController#new as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.0ms)
+
+NoMethodError (undefined method `build' for nil:NilClass):
+  app/controllers/songs_controller.rb:12:in `new'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.1ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 21:57:28 -0700
+Processing by SongsController#new as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `build' for nil:NilClass):
+  app/controllers/songs_controller.rb:12:in `new'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.2ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 21:58:01 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 31ms (Views: 13.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 21:58:16 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xkXmAYfTZFDUy6YMmbASjR8ZM1oeIgrFGTWUWfdZNHRGIqXfPgLef05doIxpUiRmTvxiKn2Q02bQkHgjWtWD2A==", "song"=>{"title"=>"Relish", "artist_name"=>""}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `name=' for nil:NilClass):
+  app/models/song.rb:9:in `artist_name='
+  app/controllers/songs_controller.rb:16:in `create'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.8ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 21:59:41 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xkXmAYfTZFDUy6YMmbASjR8ZM1oeIgrFGTWUWfdZNHRGIqXfPgLef05doIxpUiRmTvxiKn2Q02bQkHgjWtWD2A==", "song"=>{"title"=>"Copacabana", "artist_name"=>""}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `name=' for nil:NilClass):
+  app/models/song.rb:10:in `artist_name='
+  app/controllers/songs_controller.rb:16:in `create'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.1ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.9ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 22:00:14 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xkXmAYfTZFDUy6YMmbASjR8ZM1oeIgrFGTWUWfdZNHRGIqXfPgLef05doIxpUiRmTvxiKn2Q02bQkHgjWtWD2A==", "song"=>{"title"=>"Copacabana", "artist_name"=>""}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms)
+
+NoMethodError (undefined method `name=' for nil:NilClass):
+  app/models/song.rb:10:in `artist_name='
+  app/controllers/songs_controller.rb:16:in `create'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.1ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 22:00:39 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 16ms (Views: 12.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 22:00:44 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"54pz0f7NetAJSlCXvvFxVOn5t3cjSTekVbsmD6eyzXVn7TAPRxzA/5PcVhdOE0e/uBzmB0D77gecHsp1Cj562Q==", "song"=>{"title"=>"aint a nil class", "artist_name"=>""}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `name=' for nil:NilClass):
+  app/models/song.rb:10:in `artist_name='
+  app/controllers/songs_controller.rb:16:in `create'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.1ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.0ms)
+
+
+Started PUT "/console/repl_sessions/f7cb458a7cd9977bf4182393325ad6c9" for 127.0.0.1 at 2017-06-12 22:01:09 -0700
+
+
+Started PUT "/console/repl_sessions/f7cb458a7cd9977bf4182393325ad6c9" for 127.0.0.1 at 2017-06-12 22:01:13 -0700
+
+
+Started PUT "/console/repl_sessions/f7cb458a7cd9977bf4182393325ad6c9" for 127.0.0.1 at 2017-06-12 22:01:17 -0700
+
+
+Started PUT "/console/repl_sessions/f7cb458a7cd9977bf4182393325ad6c9" for 127.0.0.1 at 2017-06-12 22:01:27 -0700
+
+
+Started PUT "/console/repl_sessions/f7cb458a7cd9977bf4182393325ad6c9" for 127.0.0.1 at 2017-06-12 22:01:29 -0700
+
+
+Started PUT "/console/repl_sessions/f7cb458a7cd9977bf4182393325ad6c9" for 127.0.0.1 at 2017-06-12 22:01:38 -0700
+
+
+Started PUT "/console/repl_sessions/f7cb458a7cd9977bf4182393325ad6c9" for 127.0.0.1 at 2017-06-12 22:01:44 -0700
+
+
+Started PUT "/console/repl_sessions/f7cb458a7cd9977bf4182393325ad6c9" for 127.0.0.1 at 2017-06-12 22:01:46 -0700
+
+
+Started PUT "/console/repl_sessions/f7cb458a7cd9977bf4182393325ad6c9" for 127.0.0.1 at 2017-06-12 22:01:54 -0700
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 22:02:11 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 22:02:14 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DevY+MauXJua7trBbDFdSHr/RwbyJ/x/Zl7KAod0IOuNjJsmf3/mtAB43EGc02ujKxoWdpGVJdyv+yZ4KviXRw==", "song"=>{"title"=>"fff", "artist_name"=>""}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `name=' for nil:NilClass):
+  app/models/song.rb:10:in `artist_name='
+  app/controllers/songs_controller.rb:16:in `create'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.1ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.9ms)
+
+
+Started PUT "/console/repl_sessions/f60102a6b04b343f81a8282d11979388" for 127.0.0.1 at 2017-06-12 22:02:23 -0700
+
+
+Started PUT "/console/repl_sessions/f60102a6b04b343f81a8282d11979388" for 127.0.0.1 at 2017-06-12 22:02:26 -0700
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 22:03:21 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    4:   <%= f.label :title %>
+    5:   <%= f.text_field :title %><br>
+    6:   <%= f.label :artist_name %>
+    7:   <%= f.text_field :artist_name %>
+    8:   <br />
+    9: 
+   10:   <%= f.submit %>
+  app/models/song.rb:5:in `artist_name'
+  app/views/songs/new.html.erb:7:in `block in _app_views_songs_new_html_erb__2477228642739521575_69939923876560'
+  app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb__2477228642739521575_69939923876560'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.0ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.9ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.2ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 22:04:12 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 90125ms (Views: 12.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 22:06:16 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 3123ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 22:06:27 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UHOrlOQ1tSoOLA4DAduLkERooX7MZ8GEakSS9o83FTbQFOhKXeQPBZS6CIPxOb17FY3wDq/VGCej4X6MIruimg==", "song"=>{"title"=>"ffff", "artist_name"=>""}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `name=' for nil:NilClass):
+  app/models/song.rb:10:in `artist_name='
+  app/controllers/songs_controller.rb:17:in `create'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.9ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.1ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 22:07:11 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UHOrlOQ1tSoOLA4DAduLkERooX7MZ8GEakSS9o83FTbQFOhKXeQPBZS6CIPxOb17FY3wDq/VGCej4X6MIruimg==", "song"=>{"title"=>"dogs of war", "artist_name"=>""}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `name=' for nil:NilClass):
+  app/models/song.rb:10:in `artist_name='
+  app/controllers/songs_controller.rb:16:in `create'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.4ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 22:07:40 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UHOrlOQ1tSoOLA4DAduLkERooX7MZ8GEakSS9o83FTbQFOhKXeQPBZS6CIPxOb17FY3wDq/VGCej4X6MIruimg==", "song"=>{"title"=>"dogs of war", "artist_name"=>"acdc"}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `name=' for nil:NilClass):
+  app/models/song.rb:12:in `artist_name='
+  app/controllers/songs_controller.rb:16:in `create'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.7ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 22:08:48 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 22ms (Views: 9.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 22:08:53 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8hqxl4iudBtqPoINDxIAzq2BEdZZtQ/s+1ywWH/sebNyffJJMX/ONPCohI3/8DYl/GRApjoH1k8y+Vwi0mDOHw==", "song"=>{"title"=>"apple", "artist_name"=>"ddt"}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `name=' for nil:NilClass):
+  app/models/song.rb:13:in `artist_name='
+  app/controllers/songs_controller.rb:16:in `create'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.3ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 22:09:38 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 22ms (Views: 9.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 22:09:42 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AMmUgyPK2y96K0gzOwulpM7zShqqG3OMkZfSUtJWyvaArtddmhthAOC9TrPL6ZNPnxYbasmpqi9YMj4of9p9Wg==", "song"=>{"title"=>"ererer", "artist_name"=>"qqq"}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `name=' for nil:NilClass):
+  app/models/song.rb:13:in `artist_name='
+  app/controllers/songs_controller.rb:16:in `create'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.6ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 22:12:31 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 23ms (Views: 10.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 22:12:37 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w0P2RUOPHLkrZcH17krNo7RqEMVvt+i2BGWydCVksIlDJLWb+l6mlrHzx3UeqPtI5Y9BtQwFMRXNwF4OiOgHJQ==", "song"=>{"title"=>"Curious", "artist_name"=>"George"}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/models/song.rb:17:in `artist_name='
+  app/controllers/songs_controller.rb:16:in `create'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.1ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 22:13:04 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w0P2RUOPHLkrZcH17krNo7RqEMVvt+i2BGWydCVksIlDJLWb+l6mlrHzx3UeqPtI5Y9BtQwFMRXNwF4OiOgHJQ==", "song"=>{"title"=>"Curious", "artist_name"=>"George"}, "commit"=>"Create Song"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "George"], ["created_at", "2017-06-13 05:13:04.541585"], ["updated_at", "2017-06-13 05:13:04.541585"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Curious"], ["artist_id", 3], ["created_at", "2017-06-13 05:13:04.543216"], ["updated_at", "2017-06-13 05:13:04.543216"]]
+  [1m[35m (8.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/songs/3
+Completed 302 Found in 26ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/songs/3" for 127.0.0.1 at 2017-06-12 22:13:04 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-06-12 22:13:06 -0700
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered songs/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 22:13:08 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 22:13:12 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HMvf8Z5iPbGeuFa48E3cA6VMHLCF9EAA3tw8MgMH6EKcrJwvJ7OHngQuUDgAr+ro9KlNwOZGmaMXedBIrotf7g==", "song"=>{"title"=>"bumbles", "artist_name"=>""}, "commit"=>"Create Song"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", ""], ["created_at", "2017-06-13 05:13:12.768183"], ["updated_at", "2017-06-13 05:13:12.768183"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "bumbles"], ["artist_id", 4], ["created_at", "2017-06-13 05:13:12.769792"], ["updated_at", "2017-06-13 05:13:12.769792"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/songs/4
+Completed 302 Found in 15ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/songs/4" for 127.0.0.1 at 2017-06-12 22:13:12 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-06-12 22:13:14 -0700
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/songs/4" for 127.0.0.1 at 2017-06-12 22:13:24 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs/4" for 127.0.0.1 at 2017-06-12 22:14:23 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/songs/4/edit" for 127.0.0.1 at 2017-06-12 22:16:15 -0700
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSong Load (0.3ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mArtist Load (0.4ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/edit.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 31ms (Views: 21.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/songs/4" for 127.0.0.1 at 2017-06-12 22:19:12 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSong Load (0.3ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 22ms (Views: 14.6ms | ActiveRecord: 1.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-06-12 22:19:39 -0700
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.3ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered songs/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/songs/4" for 127.0.0.1 at 2017-06-12 22:19:42 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-06-12 22:19:47 -0700
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2017-06-12 22:19:47 -0700
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2017-06-12 22:19:52 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hVPQspbxdirn9O6Srlfuyuh/iY214JL5W/4q+LqUW/kFNJNsLyDMBX1i6BJetdghuZrY/dZSS1qSW8aCFxjsVQ==", "song"=>{"title"=>"ya shitbirds", "artist_name"=>""}, "commit"=>"Create Song"}
+  [1m[35mArtist Load (0.3ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", ""]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "ya shitbirds"], ["artist_id", 4], ["created_at", "2017-06-13 05:19:52.222304"], ["updated_at", "2017-06-13 05:19:52.222304"]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/songs/5
+Completed 302 Found in 14ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/songs/5" for 127.0.0.1 at 2017-06-12 22:19:52 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/songs/5" for 127.0.0.1 at 2017-06-12 22:19:53 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/songs/5/edit" for 127.0.0.1 at 2017-06-12 22:19:55 -0700
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/songs/5" for 127.0.0.1 at 2017-06-12 22:19:57 -0700
+Processing by SongsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aDgmSTLRDYFk1uct+Nuw9ISItKvDZZVJPg6dpfaBLdDoX2WXiwC3rv5A4a0IOYYf1W3l26DXTOr3q3HfWw2afA==", "song"=>{"title"=>"ya shitbirds", "artist_name"=>"fdfdf"}, "commit"=>"Update Song", "id"=>"5"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/songs/5
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/songs/5" for 127.0.0.1 at 2017-06-12 22:19:57 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-06-12 22:19:58 -0700
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/songs/5" for 127.0.0.1 at 2017-06-12 22:20:25 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs/5" for 127.0.0.1 at 2017-06-12 22:20:31 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/songs/5" for 127.0.0.1 at 2017-06-12 22:20:32 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/songs/5/edit" for 127.0.0.1 at 2017-06-12 22:20:33 -0700
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/songs/5" for 127.0.0.1 at 2017-06-12 22:20:41 -0700
+Processing by SongsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5DAdGldrNn0hpAxYJsJlISkMCbYKKH/Hfq1t/oGWgX5kV17E7rqMUrsyCtjWIFPKeOlYxmmapmS3CIGELBo20g==", "song"=>{"title"=>"ya shitbirds", "artist_name"=>"ththth"}, "commit"=>"Update Song", "id"=>"5"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/songs/5
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/songs/5" for 127.0.0.1 at 2017-06-12 22:20:41 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs/5/edit" for 127.0.0.1 at 2017-06-12 22:21:07 -0700
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/edit.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 25ms (Views: 17.1ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/songs/5" for 127.0.0.1 at 2017-06-12 22:21:10 -0700
+Processing by SongsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zsp3bqxS5cTHiBYjXQZ75Ufg7DaQoxzc6WF4ZWoTAvhOrTSwFYNf610eEKOt5E0OFgW9RvMRxX8gxJQfx5+1VA==", "song"=>{"title"=>"ya shitbirds", "artist_name"=>"were"}, "commit"=>"Update Song", "id"=>"5"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+RuntimeError ({"utf8"=>"✓", "_method"=>"patch", "authenticity_token"=>"zsp3bqxS5cTHiBYjXQZ75Ufg7DaQoxzc6WF4ZWoTAvhOrTSwFYNf610eEKOt5E0OFgW9RvMRxX8gxJQfx5+1VA==", "song"=>{"title"=>"ya shitbirds", "artist_name"=>"were"}, "commit"=>"Update Song", "controller"=>"songs", "action"=>"update", "id"=>"5"}):
+  app/controllers/songs_controller.rb:30:in `update'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.0ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.3ms)
+
+
+Started PUT "/songs/console/repl_sessions/322f1d7a6259c085b49a8fc3c2ab7570" for 127.0.0.1 at 2017-06-12 22:21:25 -0700
+
+
+Started GET "/songs/5/edit" for 127.0.0.1 at 2017-06-12 22:22:11 -0700
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/edit.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 25ms (Views: 17.4ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/songs/5" for 127.0.0.1 at 2017-06-12 22:22:13 -0700
+Processing by SongsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AUevmTPmaJazeDQQi8x18BuHQ3d2RPrcrzmr1g18lA+BIOxHijfSuSnuMpB7LkMbSmISBxX2I39mnEesoPAjow==", "song"=>{"title"=>"ya shitbirds", "artist_name"=>"erere"}, "commit"=>"Update Song", "id"=>"5"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+RuntimeError ({"utf8"=>"✓", "_method"=>"patch", "authenticity_token"=>"AUevmTPmaJazeDQQi8x18BuHQ3d2RPrcrzmr1g18lA+BIOxHijfSuSnuMpB7LkMbSmISBxX2I39mnEesoPAjow==", "song"=>{"title"=>"ya shitbirds", "artist_name"=>"erere"}, "commit"=>"Update Song", "controller"=>"songs", "action"=>"update", "id"=>"5"}):
+  app/controllers/songs_controller.rb:30:in `update'
+
+
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.3ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.5ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/aj/.rvm/gems/ruby-2.3.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.6ms)
+
+
+Started GET "/songs/5/edit" for 127.0.0.1 at 2017-06-12 22:22:25 -0700
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/edit.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 26ms (Views: 18.2ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/songs/5" for 127.0.0.1 at 2017-06-12 22:22:27 -0700
+Processing by SongsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GSI02vMN786nFhOmul8GIvOoTpx1QYABXp0fW5auxIiZRXcEStxV4T2AFSZKvTDJok0f7BbzWaKXOPMhOyJzJA==", "song"=>{"title"=>"ya shitbirds", "artist_name"=>"assshjj"}, "commit"=>"Update Song", "id"=>"5"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "artists" SET "name" = ?, "updated_at" = ? WHERE "artists"."id" = ?[0m  [["name", "assshjj"], ["updated_at", "2017-06-13 05:22:27.878774"], ["id", 4]]
+  [1m[35m (16.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/songs/5
+Completed 302 Found in 27ms (ActiveRecord: 17.7ms)
+
+
+Started GET "/songs/5" for 127.0.0.1 at 2017-06-12 22:22:27 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+  [1m[36mArtist Load (0.3ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", "Carman"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Carman"], ["created_at", "2017-06-13 05:24:26.293406"], ["updated_at", "2017-06-13 05:24:26.293406"]]
+  [1m[35m (14.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Rails"], ["artist_id", 5], ["created_at", "2017-06-13 05:24:31.560520"], ["updated_at", "2017-06-13 05:24:31.560520"]]
+  [1m[36m (14.6ms)[0m  [1mcommit transaction[0m
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("title", "created_at", "updated_at") VALUES (?, ?, ?)  [["title", "carebear delight"], ["created_at", "2017-06-13 05:25:37.727532"], ["updated_at", "2017-06-13 05:25:37.727532"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-06-12 22:25:42 -0700
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.6ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mArtist Load (0.3ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", ""]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", ""], ["created_at", "2017-06-13 05:25:42.980345"], ["updated_at", "2017-06-13 05:25:42.980345"]]
+  [1m[36m (15.7ms)[0m  [1mcommit transaction[0m
+  Rendered songs/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 32ms (Views: 14.6ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/songs/7" for 127.0.0.1 at 2017-06-12 22:25:44 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", ""]]
+  Rendered songs/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/songs/7" for 127.0.0.1 at 2017-06-12 22:34:31 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mSong Load (0.3ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", ""]]
+  Rendered songs/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 23ms (Views: 15.3ms | ActiveRecord: 1.4ms)
+  [1m[36mSong Load (0.3ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mArtist Load (0.3ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", ""]]
+  [1m[36mArtist Load (0.3ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1[0m  [["name", ""]]
