@@ -3,6 +3,8 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    #raise params.inspect
+    @artist = Artist.find(params[:id])
   end
 
   def new
