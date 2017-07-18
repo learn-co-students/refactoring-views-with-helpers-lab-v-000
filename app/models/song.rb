@@ -6,11 +6,7 @@ class Song < ActiveRecord::Base
   end
 
   def artist_name
-    if artist
-      artist.name
-    else
-      nil
-    end
+    artist.name if artist
   end
 
 end
