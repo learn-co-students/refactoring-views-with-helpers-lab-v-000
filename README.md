@@ -27,6 +27,5 @@ The base models, controllers, views and other files have been provided. There ar
 3. Use the helper to display the artist on the `songs#show` and `songs#index` pages.
 4. Make sure all tests pass. Then, do this:
 
-![Dancing Daft Punk](http://i.giphy.com/ZCKh7knqLpc4M.gif)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/refactoring-views-with-helpers-lab' title='Refactoring Views With Helpers Lab'>Refactoring Views With Helpers Lab</a> on Learn.co and start learning to code for free.</p>
