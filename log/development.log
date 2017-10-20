@@ -375,3 +375,18 @@ Processing by ArtistsController#show as HTML
   Parameters: {"id"=>"2"}
   Rendered artists/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mSong Load (3.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mSong Load (27.5ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" ASC LIMIT 1
+  [1m[36mArtist Load (0.5ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (42.0ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Person"], ["created_at", "2017-10-20 07:57:40.891331"], ["updated_at", "2017-10-20 07:57:40.891331"]]
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Console song"], ["artist_id", 3], ["created_at", "2017-10-20 07:57:40.934551"], ["updated_at", "2017-10-20 07:57:40.934551"]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (60.2ms)[0m  [1mINSERT INTO "songs" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Another Console Song"], ["created_at", "2017-10-20 08:03:28.189714"], ["updated_at", "2017-10-20 08:03:28.189714"]]
+  [1m[35m (16.9ms)[0m  commit transaction
+  [1m[36mArtist Load (20.5ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ?  ORDER BY "artists"."id" ASC LIMIT 1[0m  [["name", "Person"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (43.2ms)[0m  [1mUPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["artist_id", 3], ["updated_at", "2017-10-20 08:05:51.851461"], ["id", 4]]
+  [1m[35m (9.4ms)[0m  commit transaction
