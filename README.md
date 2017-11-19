@@ -18,7 +18,7 @@ When we display the song library, we want to include the artist, but if there's 
 
 The base models, controllers, views and other files have been provided. There are tests for the lab in the `spec` directory. You can run tests with the `rspec` command.
 
-1. Write the code to get (`artist_name`) and set (`artist_name=`) the `Artist` associated with a given `Song` model.
+<!-- 1. Write the code to get (`artist_name`) and set (`artist_name=`) the `Artist` associated with a given `Song` model. -->
 2. Write a helper method to display the artist for a song, with the following considerations:
   - Put the method in the appropriate helper file following the principle of Separation of Concerns
   - Name the method `display_artist`
