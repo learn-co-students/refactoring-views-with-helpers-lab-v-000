@@ -1,6 +1,7 @@
 module SongsHelper
 
   def display_artist(song)
+    #binding.pry
     if song.artist
       link_to(song.artist_name, artist_path(song.artist))
     else
