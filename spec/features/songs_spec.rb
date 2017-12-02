@@ -1,3 +1,6 @@
+require 'pry'
+require_relative '../rails_helper'
+
 describe "songs", type:  :feature do
 
   before do
