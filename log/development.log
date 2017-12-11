@@ -375,3 +375,185 @@ Processing by ArtistsController#show as HTML
   Parameters: {"id"=>"2"}
   Rendered artists/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("title", "created_at", "updated_at") VALUES (?, ?, ?)  [["title", "A Song"], ["created_at", "2017-12-11 18:36:55.973543"], ["updated_at", "2017-12-11 18:36:55.973543"]]
+  [1m[36m (6.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "An Artist"], ["created_at", "2017-12-11 18:38:15.588106"], ["updated_at", "2017-12-11 18:38:15.588106"]]
+  [1m[35m (5.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?  [["artist_id", 3], ["updated_at", "2017-12-11 18:38:29.963609"], ["id", 3]]
+  [1m[36m (4.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+
+
+Started GET "/songs/1" for 74.73.38.177 at 2017-12-11 18:45:15 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.6ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.7ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 173ms (Views: 156.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/songs/1" for 74.73.38.177 at 2017-12-11 18:46:58 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/home/ec2-user/environment/Rails/refactoring-with-helpers/refactoring-views-with-helpers-lab-v-000/app/helpers/songs_helper.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...tist_name ? link_to artist_path(song.artist) : (link_to "Add...
+...                               ^
+/home/ec2-user/environment/Rails/refactoring-with-helpers/refactoring-views-with-helpers-lab-v-000/app/helpers/songs_helper.rb:4: syntax error, unexpected ':', expecting keyword_end
+...k_to artist_path(song.artist) : (link_to "Add Artist", contr...
+...                               ^):
+  app/helpers/songs_helper.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/helpers/songs_helper.rb:4: syntax error, unexpected ':', expecting keyword_end
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/songs_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.3ms)
+
+
+Started GET "/songs/1" for 74.73.38.177 at 2017-12-11 18:47:38 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/home/ec2-user/environment/Rails/refactoring-with-helpers/refactoring-views-with-helpers-lab-v-000/app/helpers/songs_helper.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...song.artist_name ? link_to song.artist_name, artist_path(son...
+...                               ^
+/home/ec2-user/environment/Rails/refactoring-with-helpers/refactoring-views-with-helpers-lab-v-000/app/helpers/songs_helper.rb:4: syntax error, unexpected ':', expecting &. or :: or '[' or '.'
+...ame, artist_path(song.artist) : (link_to "Add Artist", contr...
+...                               ^):
+  app/helpers/songs_helper.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/helpers/songs_helper.rb:4: syntax error, unexpected ':', expecting &. or :: or '[' or '.'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/songs_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.7ms)
+
+
+Started GET "/songs/1" for 74.73.38.177 at 2017-12-11 18:48:05 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 25ms (Views: 18.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/artists/1" for 74.73.38.177 at 2017-12-11 18:48:08 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered artists/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+  [1m[36mSong Load (0.9ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "songs" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Fake Song"], ["created_at", "2017-12-11 18:49:08.561508"], ["updated_at", "2017-12-11 18:49:08.561508"]]
+  [1m[35m (5.4ms)[0m  commit transaction
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+
+
+Started GET "/songs/4" for 74.73.38.177 at 2017-12-11 18:49:28 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"artists", :id=>nil}):
+    1: <h1><%= link_to @song.title, song_path(@song) %></h1>
+    2: 
+    3: <h2><%= display_artist(@song) %></h2>
+    4: 
+    5: <%= link_to "All Songs", songs_path %>
+  app/helpers/songs_helper.rb:4:in `display_artist'
+  app/views/songs/show.html.erb:3:in `_app_views_songs_show_html_erb___1749928985394086210_69978209057220'
+
+
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.2ms)
+
+
+Started GET "/songs/4" for 74.73.38.177 at 2017-12-11 18:50:15 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 13ms (Views: 7.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artists/4/edit" for 74.73.38.177 at 2017-12-11 18:50:18 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=4):
+  app/controllers/artists_controller.rb:23:in `edit'
+
+
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.9ms)
+
+
+Started GET "/artists/4/edit" for 74.73.38.177 at 2017-12-11 18:50:40 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=4):
+  app/controllers/artists_controller.rb:23:in `edit'
+
+
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/ec2-user/.rvm/rubies/ruby-2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.9ms)
+
+
+Started GET "/songs/4" for 74.73.38.177 at 2017-12-11 18:50:46 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered songs/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 17ms (Views: 12.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/songs/4/edit" for 74.73.38.177 at 2017-12-11 18:50:47 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered songs/edit.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.1ms)
