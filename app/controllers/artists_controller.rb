@@ -27,7 +27,6 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
 
     @artist.update(artist_params)
-
     if @artist.save
       redirect_to @artist
     else
