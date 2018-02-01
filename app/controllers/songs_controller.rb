@@ -23,6 +23,7 @@ class SongsController < ApplicationController
 
   def edit
     @song = Song.find(params[:id])
+    binding.prya
   end
 
   def update
