@@ -23,6 +23,7 @@ RSpec.describe Song, type: :model do
   it "finds artist if already exists" do
     song = Song.create(title: "Around the World", artist_name: "Daft Punk")
     expect(song.artist_name).to eq "Daft Punk"
+
     expect(Artist.all.count).to eq 1
   end
 end
