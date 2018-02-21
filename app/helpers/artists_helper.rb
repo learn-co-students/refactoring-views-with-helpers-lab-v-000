@@ -5,15 +5,10 @@ module ArtistsHelper
       link_to @song.artist_name, artist_path(song.artist)
     #If an artist is not associated('else'), return a link to the song's edit page,
     #with a link text of "Add Artist"
+    elsif !song.artist
+      link_to "Add Artist", edit_song_path(song)
     else
-      
       link_to "Add Artist", edit_song_path(@song)
-      #link_to 'Add Artist', edit_song_path(song)
-      #link_to @song, edit_song_path(@song)
-      #link_to 'songs/edit'
-
     end
-
-
   end
 end
