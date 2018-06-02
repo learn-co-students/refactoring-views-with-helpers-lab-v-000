@@ -20,6 +20,4 @@ end
 # rspec spec/views/songs/index.html.erb_spec.rb
 # rspec spec/views/songs/show.html.erb_spec.rb
 
-# rspec spec/helpers/artists_helper_spec.rb
-
 # rspec spec/features/songs_spec.rb
