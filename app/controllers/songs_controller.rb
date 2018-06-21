@@ -9,6 +9,8 @@ class SongsController < ApplicationController
 
   def new
     @song = Song.new
+    @artist = Artist.new
+    @song.artist = @artist
   end
 
   def create
@@ -50,4 +52,3 @@ class SongsController < ApplicationController
     params.require(:song).permit(:title, :artist_name)
   end
 end
-

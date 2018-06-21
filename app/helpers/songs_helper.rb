@@ -1,13 +1,12 @@
 module SongsHelper
   def display_artist(song)
     #to be called on in views
-    #if artist associated with song, return a link to artist's show page
-    if song.artist
-      artist_path(@artist)
-    #if artist not associated, return a link to the song's edit page, with a link text of "Add Artist"
+    # if artist associated with song, return a link to artist's show page
+    if song.artist_id.present?
+      link_to song.artist_name, artist_path(song.artist_id)
+    # if artist not associated, return a link to the song's edit page
     else
-      edit_song_path(song)
+      link_to "Add Artist", edit_song_path(song.id)
     end
-    #Use the helper to display the artist on the songs#show and songs#index pages
   end
 end
