@@ -5,6 +5,12 @@ class SongsController < ApplicationController
 
   def show
     @song = Song.find(params[:id])
+    @artist = @song.artist
+    if @artist
+        redirect_to "/artists/#{@artist.id}"
+    else
+        erb :edit
+    end
   end
 
   def new
@@ -50,4 +56,3 @@ class SongsController < ApplicationController
     params.require(:song).permit(:title, :artist_name)
   end
 end
-
