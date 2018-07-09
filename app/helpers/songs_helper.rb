@@ -8,10 +8,10 @@ module SongsHelper
     end
 
     def display_artist(song)
-        if song.artist != nil
-            redirect_to "/artists/#{song.artist.id}"
+        if artist_name(song) != nil
+            link_to artist_name(song), artist_path(song.artist)
         else
-            render edit
+            link_to "Edit Song", song_path(song)
         end
     end
 end
