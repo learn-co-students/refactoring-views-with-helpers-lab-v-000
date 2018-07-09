@@ -1,3 +1,5 @@
+require 'pry'
+
 class SongsController < ApplicationController
   def index
     @songs = Song.all
@@ -13,7 +15,8 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.new(song_params)
-
+    @artist = Artist.find_or_create_by(name: params["song"]["artist_name"])
+    @song.artist = @artist
     if @song.save
       redirect_to @song
     else
@@ -42,6 +45,10 @@ class SongsController < ApplicationController
     @song.destroy
     flash[:notice] = "Song deleted."
     redirect_to songs_path
+  end
+
+  def artist_name
+      self.artist.name
   end
 
   private
