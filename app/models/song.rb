@@ -9,7 +9,7 @@ class Song < ActiveRecord::Base
     if self.artist
       self.artist.name = name
     else
-      self.artist = Artist.new(name)
+      self.artist = Artist.find_or_create_by(:name => name)
     end
   end
 end
