@@ -1,12 +1,10 @@
-require 'pry'
+
 module SongsHelper
   def display_artist (song)
     if song.artist
-      display = "<a href=#{artist_path}>#{song.artist_name}</a>"
-      #display = "link_to #{song.artist_name}, artist_path(#{song.artist})"
+      link_to song.artist_name, artist_path(song.artist)
     else
-      display = "<a href='songs/#{song.id}/edit'>Add Artist</a>"
+      link_to "Add Artist", edit_song_path(:id => song.id)
     end
-    display.html_safe
   end
 end
