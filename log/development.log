@@ -375,3 +375,48 @@ Processing by ArtistsController#show as HTML
   Parameters: {"id"=>"2"}
   Rendered artists/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/songs/new" for 67.244.19.121 at 2018-07-31 16:41:19 +0000
+Cannot render console from 67.244.19.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (47.8ms)
+Completed 200 OK in 230ms (Views: 220.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 67.244.19.121 at 2018-07-31 16:41:19 +0000
+Cannot render console from 67.244.19.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/songs" for 67.244.19.121 at 2018-07-31 16:41:25 +0000
+Cannot render console from 67.244.19.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vkBQXqKg8EDcqimAyFaJTIUrr09rQEnbPyYaTbGBWRGktcrDKZ6IB6GKfv4g2+SeCjTBbnZzkkWIJ4A6qW0TdQ==", "song"=>{"title"=>"Hello", "artist_name"=>"Adele"}, "commit"=>"Create Song"}
+  [1m[35mArtist Load (0.3ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Adele"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Adele"], ["created_at", "2018-07-31 16:41:25.076661"], ["updated_at", "2018-07-31 16:41:25.076661"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hello"], ["artist_id", 3], ["created_at", "2018-07-31 16:41:25.082586"], ["updated_at", "2018-07-31 16:41:25.082586"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Redirected to http://174.138.35.103:43463/songs/3
+Completed 302 Found in 52ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/songs/3" for 67.244.19.121 at 2018-07-31 16:41:25 +0000
+Cannot render console from 67.244.19.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 23ms (Views: 17.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artists/3" for 67.244.19.121 at 2018-07-31 16:41:30 +0000
+Cannot render console from 67.244.19.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendered artists/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
