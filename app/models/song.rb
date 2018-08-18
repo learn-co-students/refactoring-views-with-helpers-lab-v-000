@@ -2,7 +2,8 @@ class Song < ActiveRecord::Base
   belongs_to :artist
 
   def artist_name
-    artist.name if artist
+    # artist.name if artist
+    artist.try(:name)
   end
 
   def artist_name=(name)
