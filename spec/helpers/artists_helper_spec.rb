@@ -15,6 +15,7 @@ RSpec.describe ArtistsHelper, type: :helper do
 
   it "displays a link to edit the song if artist empty" do
     song = Song.create(title: "Bohemian Rhapsody")
+    binding.pry
     expect(helper.display_artist(song)).to include(edit_song_path(song))
     expect(helper.display_artist(song)).to include("Add Artist")
   end
