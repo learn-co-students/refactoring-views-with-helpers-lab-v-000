@@ -1,7 +1,25 @@
-<ul>
+<fieldset>
+<legend> <h2>Songs:</h2> </legend>
+<ul style= "list-style-type:none">
 <% @songs.each do |song| %>
-  <li><%= link_to song.title, song_path(song) %></li>
+  <% if song.artist %>
+    <li><%= link_to song.title, song_path(song) %></li>
+  <% else %>
+    <li><%= link_to "Add Artist", edit_song_path(song) %></li>
+  <% end %>
 <% end %>
 </ul>
-<br>
+</fieldset>
+
+<div>
 <%= link_to "Add New Song", new_song_path %>
+</div>
+
+<fieldset>
+  <legend>Artists</legend>
+  <ul>
+    <% @songs.each do |song| %>
+      <li> <%= link_to display_artist(song), song_path(song) %> </li>
+    <% end %>
+  </ul>
+</fieldset>
