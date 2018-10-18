@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+require 'pry'
 RSpec.describe Song, type: :model do
   before do
     Artist.destroy_all
@@ -9,6 +9,7 @@ RSpec.describe Song, type: :model do
   end
 
   it "gets the artist name" do
+    #binding.pry
     expect(@grid.artist_name).to eq("Daft Punk")
   end
 
