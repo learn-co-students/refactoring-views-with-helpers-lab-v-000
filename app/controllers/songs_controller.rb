@@ -5,6 +5,8 @@ class SongsController < ApplicationController
 
   def show
     @song = Song.find(params[:id])
+    @artist = @song.artist
+    @artist_name = @song.artist_name
   end
 
   def new
