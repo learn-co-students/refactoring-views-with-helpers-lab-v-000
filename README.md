@@ -15,7 +15,7 @@ When a user adds a song to the library, they might be in a hurry and not know th
 When we display the song library to the user, we want to account for when no artist has been associated with any given song. Additionally, we want to prompt the user to add an artist (mostly because we don't want to contribute to the global iTunes library "Unknown Artist" epidemic).
 
 ## Instructions
-
+                 
 The base models, controllers, views and other files have been provided. There are tests for the lab in the `spec` directory. You can run tests with the `rspec` command.
 
 1. Write the code for `#artist_name` and `#artist_name=` so that an `Artist` can be retrieved from, and associated with, a `Song` instance
