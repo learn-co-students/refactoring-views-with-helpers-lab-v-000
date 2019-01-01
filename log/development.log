@@ -375,3 +375,82 @@ Processing by ArtistsController#show as HTML
   Parameters: {"id"=>"2"}
   Rendered artists/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/songs/new" for ::1 at 2018-12-25 07:39:27 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (63.4ms)
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    4:   <%= f.label :title %>
+    5:   <%= f.text_field :title %><br>
+    6:   <%= f.label :artist_name %>
+    7:   <%= f.text_field :artist_name %>
+    8:   <br />
+    9: 
+   10:   <%= f.submit %>
+  app/models/song.rb:9:in `artist_name'
+  app/views/songs/new.html.erb:7:in `block in _app_views_songs_new_html_erb___596616945555817044_70302023535620'
+  app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb___596616945555817044_70302023535620'
+
+
+  Rendered /Users/bekahhw/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/bekahhw/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/bekahhw/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (14.1ms)
+  Rendered /Users/bekahhw/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (110.6ms)
+  Rendered /Users/bekahhw/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/bekahhw/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/bekahhw/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bekahhw/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/bekahhw/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (81.9ms)
+  Rendered /Users/bekahhw/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/bekahhw/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/bekahhw/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (182.4ms)
+
+
+Started GET "/songs/new" for ::1 at 2018-12-25 07:39:54 -0500
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 231ms (Views: 223.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/songs" for ::1 at 2018-12-25 07:40:06 -0500
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YGGHbxIJWn6w8uRtYTdZwqBARjNUMMRd2urznoc1xXeV1C5Brl61c7lpr1QaLKyxWs4zFtl9dwwOyzoKNQBfjA==", "song"=>{"title"=>"Southern Man", "artist_name"=>"neil young"}, "commit"=>"Create Song"}
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "neil young"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "neil young"], ["created_at", "2018-12-25 12:40:06.578425"], ["updated_at", "2018-12-25 12:40:06.578425"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Southern Man"], ["artist_id", 3], ["created_at", "2018-12-25 12:40:06.584167"], ["updated_at", "2018-12-25 12:40:06.584167"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/songs/3
+Completed 302 Found in 39ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/songs/3" for ::1 at 2018-12-25 07:40:06 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 121ms (Views: 116.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/songs" for ::1 at 2018-12-25 07:40:10 -0500
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  Rendered songs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 14ms (Views: 14.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs" for ::1 at 2018-12-25 07:43:12 -0500
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (3.2ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.4ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered songs/index.html.erb within layouts/application (64.2ms)
+Completed 200 OK in 137ms (Views: 117.5ms | ActiveRecord: 3.9ms)
