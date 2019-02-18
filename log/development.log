@@ -375,3 +375,289 @@ Processing by ArtistsController#show as HTML
   Parameters: {"id"=>"2"}
   Rendered artists/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mSong Load (1.5ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.3ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "songs" ("title", "created_at", "updated_at") VALUES (?, ?, ?)  [["title", "Frail"], ["created_at", "2019-02-18 00:43:39.279591"], ["updated_at", "2019-02-18 00:43:39.279591"]]
+  [1m[36m (416.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/songs/3" for 127.0.0.1 at 2019-02-17 18:43:51 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.9ms)
+
+SyntaxError (/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:5: syntax error, unexpected $undefined, expecting keyword_do or '{' or '('
+put_buffer.safe_append='/edit\' %>
+                              ^
+/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:6: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:9: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  app/views/songs/show.html.erb:5: syntax error, unexpected $undefined, expecting keyword_do or '{' or '('
+  app/views/songs/show.html.erb:6: syntax error, unexpected keyword_end, expecting ')'
+  app/views/songs/show.html.erb:9: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/songs/show.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.7ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.7ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (58.8ms)
+
+
+Started GET "/songs/3" for 127.0.0.1 at 2019-02-17 18:44:09 -0600
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 238ms (Views: 236.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2019-02-17 18:44:09 -0600
+
+
+Started GET "/songs/3" for 127.0.0.1 at 2019-02-17 18:44:32 -0600
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:5: syntax error, unexpected $undefined, expecting keyword_do or '{' or '('
+put_buffer.safe_append='/edit\' %>
+                              ^
+/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:6: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:9: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  app/views/songs/show.html.erb:5: syntax error, unexpected $undefined, expecting keyword_do or '{' or '('
+  app/views/songs/show.html.erb:6: syntax error, unexpected keyword_end, expecting ')'
+  app/views/songs/show.html.erb:9: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/songs/show.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.3ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.8ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (36.2ms)
+
+
+Started GET "/songs/3" for 127.0.0.1 at 2019-02-17 18:44:47 -0600
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:5: syntax error, unexpected '>'
+_buffer.safe_append='/edit" %>
+                              ^
+/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:8: unterminated string meets end of file
+/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:8: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/songs/show.html.erb:5: syntax error, unexpected '>'
+  app/views/songs/show.html.erb:8: unterminated string meets end of file
+  app/views/songs/show.html.erb:8: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.1ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.8ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.9ms)
+
+
+Started GET "/songs/3" for 127.0.0.1 at 2019-02-17 18:45:27 -0600
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2019-02-17 18:45:27 -0600
+
+
+Started GET "/songs/3" for 127.0.0.1 at 2019-02-17 18:46:45 -0600
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2019-02-17 18:46:45 -0600
+
+
+Started GET "/songs/3" for 127.0.0.1 at 2019-02-17 18:50:50 -0600
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:4: syntax error, unexpected '<', expecting ')'
+<%= link_to "All Songs", songs_
+ ^
+/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/views/songs/show.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  app/views/songs/show.html.erb:4: syntax error, unexpected '<', expecting ')'
+  app/views/songs/show.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/songs/show.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.0ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.0ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.0ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (36.0ms)
+
+
+Started GET "/songs/3" for 127.0.0.1 at 2019-02-17 18:50:57 -0600
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered songs/_artist_or_edit.html.erb (0.7ms)
+  Rendered songs/show.html.erb within layouts/application (5453.1ms)
+Completed 200 OK in 5465ms (Views: 5458.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2019-02-17 18:51:03 -0600
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-02-17 18:52:37 -0600
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/_artist_or_edit.html.erb (17.0ms)
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/_artist_or_edit.html.erb (1.3ms)
+  Rendered songs/_artist_or_edit.html.erb (0.4ms)
+  Rendered songs/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2019-02-17 18:52:38 -0600
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-02-17 19:00:44 -0600
+
+SyntaxError (/home/brad/code/labs/refactoring-views-with-helpers-lab-v-000/app/helpers/artists_helper.rb:5: syntax error, unexpected keyword_else, expecting ')'
+		else
+		    ^):
+  app/helpers/artists_helper.rb:5: syntax error, unexpected keyword_else, expecting ')'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/songs_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.6ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.9ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/brad/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.0ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-02-17 19:01:01 -0600
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.4ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.3ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2019-02-17 19:01:01 -0600
+
+
+Started GET "/songs/3" for 127.0.0.1 at 2019-02-17 19:01:32 -0600
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs/2" for 127.0.0.1 at 2019-02-17 19:01:35 -0600
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/songs/2" for 127.0.0.1 at 2019-02-17 19:02:19 -0600
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered songs/show.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 28ms (Views: 18.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2019-02-17 19:02:20 -0600
