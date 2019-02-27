@@ -1,10 +1,12 @@
 module SongsHelper
 
-def display_artist
-	if self.artist != nil
-		<p><a href="/artists/#{self.artist.id}">Link</a></p>
+def display_artist(song)
+	if song.artist != nil
+		link_to "#{song.artist_name}", artist_path(song.artist.id)
+	else
+		link_to "Add Artist", edit_song_path(song.id)
+	end
 end
-
 
 
 end
