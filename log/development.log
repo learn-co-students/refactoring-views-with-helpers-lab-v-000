@@ -417,3 +417,42 @@ Processing by SongsController#show as HTML
   [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered songs/show.html.erb within layouts/application (17.3ms)
 Completed 200 OK in 251ms (Views: 229.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/songs/new" for ::1 at 2019-03-16 20:57:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (42.4ms)
+Completed 200 OK in 266ms (Views: 255.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/songs" for ::1 at 2019-03-16 20:57:23 -0400
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e16tR/8HvovL1hwKUHg/qFu3kksx+s13x+C/PERfQcHO2p4+0sDjkqgEpnbrZQFo1liZ+iwwa/jkoLM6BOIOzg==", "song"=>{"title"=>"My Life", "artist_name"=>""}, "commit"=>"Create Song"}
+  [1m[35mArtist Load (0.7ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", ""]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", ""], ["created_at", "2019-03-17 00:57:23.433263"], ["updated_at", "2019-03-17 00:57:23.433263"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "My Life"], ["artist_id", 3], ["created_at", "2019-03-17 00:57:23.437731"], ["updated_at", "2019-03-17 00:57:23.437731"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/songs/3
+Completed 302 Found in 27ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/songs/3" for ::1 at 2019-03-16 20:57:23 -0400
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/songs/3" for ::1 at 2019-03-16 20:58:49 -0400
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mArtist Load (0.4ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (171004.9ms)
+Completed   in 171025ms (ActiveRecord: 2.6ms)
