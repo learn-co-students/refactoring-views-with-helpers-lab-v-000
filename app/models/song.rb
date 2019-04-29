@@ -1,9 +1,14 @@
-class Song < ActiveRecord::Base
-  belongs_to :artist
+  class Song < ActiveRecord::Base
+    belongs_to :artist
 
-  def artist_name
-  end
+    def artist_name
+      artist.name if artist
 
-  def artist_name=(name)
+    end
+
+    def artist_name=(name)
+      #binding.pry
+      self.artist = Artist.find_or_create_by(name: name)
+
+    end
   end
-end
