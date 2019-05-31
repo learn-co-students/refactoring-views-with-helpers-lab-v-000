@@ -1,2 +1,17 @@
 module ArtistsHelper
+
+  def display_artist(song)
+    if song.artist
+      link_to song.artist_name, artist_path(song.artist)
+    else
+       link_to "Add Artist", edit_song_path(song)
+    end
+  end
+
+  # <% if @song.artist %>
+  # <h1><%= link_to @song.artist_name, artist_path(@song.artist) %></h1>
+  # <% else %>
+  # <%= link_to "Add Artist", edit_song_path(@song) %>
+  # <% end %>
+
 end
