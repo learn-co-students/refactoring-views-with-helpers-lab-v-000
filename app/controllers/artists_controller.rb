@@ -3,10 +3,13 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @artist = Artist.find(params[:id])
+    render :show
   end
 
   def new
     @artist = Artist.new
+    render :show
   end
 
   def create
@@ -45,6 +48,7 @@ class ArtistsController < ApplicationController
   private
 
   def artist_params
+
     params.require(:artist).permit(:name)
   end
 end
