@@ -9,6 +9,7 @@ class SongsController < ApplicationController
 
   def new
     @song = Song.new
+    @artist = @song.build_artist
   end
 
   def create

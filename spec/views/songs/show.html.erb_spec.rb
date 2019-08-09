@@ -6,6 +6,7 @@ RSpec.describe 'songs/show' do
     Song.destroy_all
     @song = Song.create(title: "Bullet the Blue Sky", artist_name: "U2")
     allow(view).to receive(:display_artist).and_return("They Might Be Giants")
+
     assign(:song, Song.first)
   end
 
