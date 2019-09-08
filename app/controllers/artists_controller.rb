@@ -3,6 +3,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    display_artist()
   end
 
   def new
