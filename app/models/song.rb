@@ -9,4 +9,6 @@ class Song < ActiveRecord::Base
     @artist_name
   end
 
+  binding.pry
+
 end
