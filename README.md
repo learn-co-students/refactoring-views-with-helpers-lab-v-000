@@ -8,7 +8,7 @@
 
 ## Song Library
 
-In this lab, we're going to augment our song library. While, ideally, every song is associated with an artist, this won't always be the case in our application. We'll use helpers to display different links based on whether or not a song is associated with an artist.
+In this lab, we're going to augment our song library. While, ideally, every song is associated with an artist, this won't always be the case in our application. We'll use helpers to display different links based on whether or not a song is associated with an artist.  
 
 When a user adds a song to the library, they might be in a hurry and not know the artist off the top of their head, leaving it blank.
 
