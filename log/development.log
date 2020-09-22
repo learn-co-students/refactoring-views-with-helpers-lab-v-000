@@ -375,3 +375,115 @@ Processing by ArtistsController#show as HTML
   Parameters: {"id"=>"2"}
   Rendered artists/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-08-04 18:31:08 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/sophia/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (1.2ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/songs" for ::1 at 2017-08-04 18:31:17 -0700
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.5ms)[0m  SELECT "songs".* FROM "songs"
+  Rendered songs/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 168ms (Views: 164.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/songs/1" for ::1 at 2017-08-04 18:31:31 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 14ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs/1" for ::1 at 2017-08-04 18:31:34 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/songs/1" for ::1 at 2017-08-04 18:32:47 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.5ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/artists/1" for ::1 at 2017-08-04 18:32:53 -0700
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered artists/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/songs/1" for ::1 at 2017-08-04 18:33:01 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs/1" for ::1 at 2017-08-04 18:45:39 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.4ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 17ms (Views: 8.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/songs/1" for ::1 at 2017-08-04 18:45:55 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (25.4ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `song' for #<#<Class:0x007fbfec1455d8>:0x007fbfe9c53298>
+Did you mean?  @song):
+    1: <h1><%= link_to @song.title, song_path(@song) %></h1>
+    2: <p>Artist: <%= display_artist%> </p>
+    3: 
+    4: <%= link_to "All Songs", songs_path %>
+  app/helpers/artists_helper.rb:3:in `display_artist'
+  app/views/songs/show.html.erb:2:in `_app_views_songs_show_html_erb___4589902464514699104_70231118745640'
+
+
+  Rendered /Users/sophia/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/sophia/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/sophia/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/sophia/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (56.3ms)
+  Rendered /Users/sophia/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/sophia/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sophia/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sophia/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/sophia/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (49.3ms)
+  Rendered /Users/sophia/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/sophia/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/sophia/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (110.9ms)
+
+
+Started GET "/songs/1" for ::1 at 2017-08-04 18:46:45 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 29ms (Views: 18.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/songs" for ::1 at 2017-08-04 18:47:25 -0700
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered songs/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.3ms)
